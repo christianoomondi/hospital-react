@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>customer register</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div Class="navbar">
+            <a href="#"onclick="showsection('signin')">signin</a>
+            <a href="#"onclick="showsection('signin')">register</a>
+        </div>
+        <div class="content">
+            <div id="signin" class="section">
+             <label for="username">usermame:</label>
+            <input type="text" id="Username"  name="username"><br><br> 
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password"><br><br>
+        <button onclick="checksignin()">signin</button>
+         </div>
+         <div id="form" class="section">
+            <h2>CUSTOMER DETAILS</h2>
+            <label for="CD">Code:</label>
+            <input type="text" id="code" name="code">
+            <label for="Customer types">customer "types":</label>
+            <input type="text" id="customer types" name="customer types">
+           <label for="title">title:</label>
+            <input type="text" id="title" name="title">
+            <label for="Full name">Full name:</label>
+            <input type="text" id="Full name" name="full name"><br><br>
+             <label for="country">country:</label>
+            <input type="text" id="country" name="country">
+            <label for="Full name">city:</label>
+            <input type="text" id="city" name="city">
+           <label for="Phone number">phone number:</label>
+            <input type="text" id="phone number" name="phone number">
+            <label for="email">Email:</label>
+            <input type="Email" id="Email" name="email">
+             <div class="container" id="FF SETUP">
+                <h3>FF setup</h3><br>
+                <label for="Royalty">Royalty</label>
+                <input type="checkbox" id="Royalty" name="royalty">
+                <label for="credit">credit</label>
+                <input type="checkbox" id="credit" name="credit"><br><br>
+                <label for="Identification type">identification type:</label>
+                <input type="text" id="idtype" name="identification type">
+                <label for="idnum">id number:</label>
+                <input type="text" id="idnum" name="id number">
+                <label for="dob">Date of birth:</label>
+                <input type="text" id="DOB" name="Date of birth"><br
+                <label for="Branches"> Branch:</label>
+                <select name="branch" id="branch" multiple>
+                    <option value="1">SAYEN NAIROBI</option>
+                    <option value="2">SAYEN NKUBU</option>
+                    <option value="3">SAYEN ELDORET</option>
+                    <option value="4">SAYEN MERU</option>
+                </select>  
+             </div> 
+         </div>
+         <script>
+            function showsection(id){
+                document.queryselectorAll('.section').forEach(el=>el.style.display='none');
+                document.getElementById(id).style.display='block';
+            }
+         </script>
+    </body> 
+</html>

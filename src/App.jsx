@@ -1,24 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState, useEffect } from 'react';
+
+import Spinner from './components/spinner';
 import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Choosing from './components/Choosing';
+import Banner from './components/Banner';
+import Forms from './components/Forms';
+import Blogs from './components/Blogs';
+import Popularquestions from './components/Popularquestions';
+import Footer from './components/Footer';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  if (loading) return <Spinner />;
 
   return (
-    <>
-      <Navbar />
-     <Hero />
-     <br />
-     <br />
-     <Choosing />
-    </>
-  )
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-all">
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Hero />
+      <Choosing />
+      <Banner />
+
+      <div className="flex items-center my-10">
+        <span className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></span>
+        <span className="px-4 text-gray-900 dark:text-white">Make an Appointment</span>
+        <span className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></span>
+      </div>
+
+      <Forms />
+      <Blogs />
+      <Popularquestions />
+      <Footer />
+    </div>
+  );
 }
+
+
 
 export default App
