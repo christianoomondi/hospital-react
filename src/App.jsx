@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Spinner from './components/spinner';
 import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,18 +12,15 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
+
   const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
-  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
-  if (loading) return <Spinner />;
+
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-all">
